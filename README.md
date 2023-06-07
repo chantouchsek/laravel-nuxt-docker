@@ -31,7 +31,7 @@ There are also no restrictions on adding more, for example, a mobile or an admin
 Clone or download the repository and enter its directory:
 
 ```bash
-git clone https://github.com/nevadskiy/laravel-nuxt-docker.git app
+git clone https://github.com/chantouchsek/laravel-nuxt-docker.git app
 cd app
 ```
 
