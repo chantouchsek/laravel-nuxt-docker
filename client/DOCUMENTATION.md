@@ -67,23 +67,20 @@ To fetch data from the Laravel API, you have to use different endpoints when req
 The `.env` file already contains those endpoints, so you can use the following `nuxt.config.ts` file:
 
 ```ts
-import { defineNuxtConfig } from 'nuxt'
-
 export default defineNuxtConfig({
-  publicRuntimeConfig: {
-    apiUrlBrowser: process.env.API_URL_BROWSER,
-  },
-
-  privateRuntimeConfig: {
-    apiUrlServer: process.env.API_URL_SERVER,
-  }
+    runtimeConfig: {
+        apiUrlBrowser: process.env.API_URL_BROWSER,
+        public: {
+            apiUrlServer: process.env.API_URL_SERVER,
+        },
+    }
 })
 ```
 
 Then, you can create something like this composable function `/composables/apiFetch.ts`:
 
 ```ts
-import type { FetchOptions } from 'ohmyfetch'
+import type { FetchOptions } from 'ohfetch'
 
 export const useApiFetch = (path: string, opts?: FetchOptions) => {
   const config = useRuntimeConfig()
